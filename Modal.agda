@@ -74,3 +74,9 @@ th2 : (p q : ℙ) → [ □ (p ⇒ q) ⇒ (□ p ⇒ □ q) ]
 th2 p q = λ w0 □p⇒q → λ □p w1 r →
   let t = □p⇒q w1 r in t (□p w1 r)
 
+th3 : (p : ℙ) → [ (□ (□ p)) ⇒ (□ (◇ p)) ]
+th3 p = λ w0 x0 w1 x1 → w1 , x0 w1 x1 w1
+
+th4 : (p : ℙ) → [ (□ (□ p)) ⇒ (◇ (◇ p)) ]
+th4 p = λ w z → w , (λ x → w , (λ x1 → z w x1 w x1))
+
